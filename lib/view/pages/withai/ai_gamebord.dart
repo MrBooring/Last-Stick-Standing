@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:last_stick_standing/Controllers/2p_controller.dart';
+import 'package:last_stick_standing/Controllers/ai_controller.dart';
 
-//mandar.r.sonawne@gmail.com
-class P2GameBoard extends GetView<P2Controller> {
-  const P2GameBoard({super.key});
+class AiGameBoard extends GetView<AiController> {
+  const AiGameBoard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +34,21 @@ class P2GameBoard extends GetView<P2Controller> {
                       child: Text(
                         "${controller.totalSticks.value}",
                         style: TextStyle(
-                          fontSize: size.height * .07,
+                          fontSize: size.height * .08,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
+                    ),
+                    Positioned(
+                        bottom: 10,
+                        left: 5,
+                        child: Text(
+                          "Ai Picked ${controller.aiPickedSticks}",
+                          style: TextStyle(
+                            fontSize: size.height * .025,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ))
                   ],
                 ),
               ),
@@ -132,50 +141,38 @@ class P2GameBoard extends GetView<P2Controller> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Obx(() => FilledButton.tonal(
-                                      onPressed: () {
-                                        var value = 1;
-                                        controller.onP1ValuePicked(value);
-                                      },
-                                      style: FilledButton.styleFrom(
-                                          backgroundColor: controller.isPlayerOneTurn.value
-                                              ? Colors.blue.shade400.withOpacity(.8)
-                                              : Colors.red.withOpacity(.7)),
-                                      child: const Text("1"),
-                                    )),
-                                Obx(() => FilledButton.tonal(
-                                      onPressed: () {
-                                        var value = 2;
-                                        controller.onP1ValuePicked(value);
-                                      },
-                                      style: FilledButton.styleFrom(
-                                          backgroundColor: controller.isPlayerOneTurn.value
-                                              ? Colors.blue.shade400.withOpacity(.8)
-                                              : Colors.red.withOpacity(.7)),
-                                      child: const Text("2"),
-                                    )),
-                                Obx(() => FilledButton.tonal(
-                                      onPressed: () {
-                                        var value = 3;
-                                        controller.onP1ValuePicked(value);
-                                      },
-                                      style: FilledButton.styleFrom(
-                                          backgroundColor: controller.isPlayerOneTurn.value
-                                              ? Colors.blue.shade400.withOpacity(.8)
-                                              : Colors.red.withOpacity(.7)),
-                                      child: const Text("3"),
-                                    )),
-                                Obx(() => FilledButton.tonal(
-                                      onPressed: () {
-                                        var value = 4;
-                                        controller.onP1ValuePicked(value);
-                                      },
-                                      style: FilledButton.styleFrom(
-                                          backgroundColor: controller.isPlayerOneTurn.value
-                                              ? Colors.blue.shade400.withOpacity(.8)
-                                              : Colors.red.withOpacity(.7)),
-                                      child: const Text("4"),
-                                    )),
+                                FilledButton.tonal(
+                                  onPressed: () {
+                                    var value = 1;
+                                    controller.onP1ValuePicked(value);
+                                  },
+                                  style: FilledButton.styleFrom(backgroundColor: Colors.blue.shade400.withOpacity(.8)),
+                                  child: const Text("1"),
+                                ),
+                                FilledButton.tonal(
+                                  onPressed: () {
+                                    var value = 2;
+                                    controller.onP1ValuePicked(value);
+                                  },
+                                  style: FilledButton.styleFrom(backgroundColor: Colors.blue.shade400.withOpacity(.8)),
+                                  child: const Text("2"),
+                                ),
+                                FilledButton.tonal(
+                                  onPressed: () {
+                                    var value = 3;
+                                    controller.onP1ValuePicked(value);
+                                  },
+                                  style: FilledButton.styleFrom(backgroundColor: Colors.blue.shade400.withOpacity(.8)),
+                                  child: const Text("3"),
+                                ),
+                                FilledButton.tonal(
+                                  onPressed: () {
+                                    var value = 4;
+                                    controller.onP1ValuePicked(value);
+                                  },
+                                  style: FilledButton.styleFrom(backgroundColor: Colors.blue.shade400.withOpacity(.8)),
+                                  child: const Text("4"),
+                                ),
                               ],
                             ),
                           ],

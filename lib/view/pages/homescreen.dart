@@ -89,29 +89,31 @@ class _HomeScreenState extends State<HomeScreen> {
             thickness: size.height * .002,
             color: Colors.blueGrey,
           ),
-          // Row(
-          //   children: [
-          //     SizedBox(
-          //       width: size.width * .13,
-          //     ),
-          //     Text(
-          //       "Play With Ai :",
-          //       textAlign: TextAlign.center,
-          //       style: TextStyle(
-          //         fontSize: size.height * .025,
-          //         fontWeight: FontWeight.bold,
-          //       ),
-          //     ),
-          //     SizedBox(
-          //       width: size.width * .2,
-          //     ),
-          //     FilledButton.tonal(
-          //       onPressed: () {},
-          //       style: FilledButton.styleFrom(backgroundColor: Colors.green.shade300),
-          //       child: const Text("PLAY"),
-          //     )
-          //   ],
-          // )
+          Row(
+            children: [
+              SizedBox(
+                width: size.width * .13,
+              ),
+              Text(
+                "Play With Ai :",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: size.height * .025,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                width: size.width * .2,
+              ),
+              FilledButton.tonal(
+                onPressed: () {
+                  Get.toNamed("/AiGameBoard");
+                },
+                style: FilledButton.styleFrom(backgroundColor: Colors.green.shade300),
+                child: const Text("PLAY"),
+              )
+            ],
+          )
         ],
       )),
     );
