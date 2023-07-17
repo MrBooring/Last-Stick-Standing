@@ -22,8 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(
             "Welcome To 21 Sticks Game",
             style: TextStyle(
-              fontSize: size.height * .03,
-            ),
+                fontSize: size.height * .03, fontWeight: FontWeight.w700),
           ),
           Padding(
             padding: EdgeInsets.all(size.width * .02),
@@ -36,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: size.height * .02,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
@@ -43,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: size.height * .02,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
@@ -50,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: size.height * .02,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
@@ -60,59 +62,57 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.black,
             thickness: size.height * .0025,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: size.width * .2,
-              ),
-              Text(
-                "2 Players :",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: size.height * .025,
-                  fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "2 Players :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: size.height * .025,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: size.width * .2,
-              ),
-              FilledButton.tonal(
-                onPressed: () {
-                  Get.toNamed("/P2GameBoard");
-                },
-                style: FilledButton.styleFrom(backgroundColor: Colors.green.shade300),
-                child: const Text("PLAY"),
-              )
-            ],
+                FilledButton.tonal(
+                  onPressed: () {
+                    Get.toNamed("/P2GameBoard");
+                  },
+                  style: FilledButton.styleFrom(
+                      backgroundColor: Colors.green.shade300),
+                  child: const Text("PLAY"),
+                )
+              ],
+            ),
           ),
           Divider(
             thickness: size.height * .002,
             color: Colors.blueGrey,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: size.width * .13,
-              ),
-              Text(
-                "Play With Ai :",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: size.height * .025,
-                  fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Play With Ai :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: size.height * .025,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: size.width * .2,
-              ),
-              FilledButton.tonal(
-                onPressed: () {
-                  Get.toNamed("/AiGameBoard");
-                },
-                style: FilledButton.styleFrom(backgroundColor: Colors.green.shade300),
-                child: const Text("PLAY"),
-              )
-            ],
+                FilledButton.tonal(
+                  onPressed: () {
+                    Get.toNamed("/AiGameBoard");
+                  },
+                  style: FilledButton.styleFrom(
+                      backgroundColor: Colors.green.shade300),
+                  child: const Text("PLAY"),
+                )
+              ],
+            ),
           )
         ],
       )),
